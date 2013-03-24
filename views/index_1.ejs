@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Taipei Design City</title>
+  <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <!-- <link rel="stylesheet" href="http://inthe7heaven.com/sense/css/fancybox/jquery.fancybox-buttons.css">
+  <link rel="stylesheet" href="http://inthe7heaven.com/sense/css/fancybox/jquery.fancybox-thumbs.css">
+  <link rel="stylesheet" href="http://inthe7heaven.com/sense/css/fancybox/jquery.fancybox.css"> -->
+  <link rel="icon" href="http://inthe7heaven.com/sense/images/fav_icon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://inthe7heaven.com/sense/images/fav_icon.ico" type="image/x-icon">
+  <script id="twitter-wjs" src="scripts/widgets.js"></script>
+  <script type="text/javascript" src="scripts/jquery-1.7.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.queryloader.js"></script>
+  <script type="text/javascript" src="scripts/jquery.scrollTo-1.4.3.js"></script>
+  <script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="scripts/jquery.nav.js"></script>
+  <script type="text/javascript" src="scripts/jquery.scrollorama.js"></script>
+  <script type="text/javascript" src="scripts/jquery.localscroll.js"></script>
+  <script type="text/javascript" src="scripts/jquery.equalheights.js"></script> 
+  <script type="text/javascript" src="scripts/forms.js"></script>
+  <script type="text/javascript" src="scripts/jquery.flexslider-min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.elastislide.js"></script>
+  <script type="text/javascript" src="scripts/script.js"></script>
+  <script type="text/javascript" src="scripts/jquery.backgroundPosition.js"></script>
+  <script type="text/javascript" src="scripts/jquery.tweet.js"></script>      
+  <!-- FancyBox -->      
+  <script src="scripts/jquery.fancybox.js"></script>
+  <script src="scripts/jquery.fancybox-buttons.js"></script>
+  <script src="scripts/jquery.fancybox-thumbs.js"></script>    
+  <script src="scripts/jquery.mousewheel-3.0.6.pack.js"></script>
+  <script type="text/javascript" src="scripts/swfobject.js"></script>
+
+  <!--[if lt IE 9]>
+      <script type="text/javascript" src="scripts/html5.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+  <![endif]-->
+  <!--[if lt IE 7]>
+  <div style=' clear: both; text-align:center; position: relative;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+   </a>
+  </div>
+  <![endif]-->
+  <script type="text/javascript">if($(window).width()>1024){document.write("<"+"script src='scripts/jquery.parallax.js'></"+"script>");document.write("<"+"script  src='scripts/jquery.parallax-1.1.js'></"+"script>");} </script><script src="scripts/jquery.parallax.js"></script><script src="scripts/jquery.parallax-1.1.js"></script>
+  <script>
+  var ua=navigator.userAgent.toLocaleLowerCase(),
+   regV = /ipod|ipad|iphone/gi,
+   result = ua.match(regV),
+   userScale="";
+  if(!result){
+   userScale=",user-scalable=0"
+  }
+  document.write('<meta name="viewport" content="width=device-width,initial-scale=1.0'+userScale+'">')
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.flexslider').flexslider();
+    });
+  </script>    
+  <script>
+  ! function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+  }(document, "script", "twitter-wjs");
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $(".fancybox").fancybox();        
+    $(".various").fancybox({
+        maxWidth  : 800,
+        maxHeight : 600,
+        fitToView : false,
+        width   : '70%',
+        height    : '70%',
+        autoSize  : false,
+        closeClick  : false,
+        openEffect  : 'elastic',
+        closeEffect : 'none'
+      }); 
+            
+    });
+  </script>
+  <script type="text/javascript">
+    $('#nav a ').click(function() {
+      $(this).addClass('active');
+    });
+
+    jQuery(document).ready(function($) {
+
+      $("#menu-icon").on("click", function() {
+        $("#box-nav").slideToggle();
+        $(this).toggleClass("active");
+      });
+    });    
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('#nav').onePageNav();
+    $('#next_btn').localScroll();
+    $('#logo').localScroll();
+    $('#home_btn').localScroll();
+    $('#button_2').localScroll();
+
+    $x = $(window).width();
+    if ($x <= 1024) {
+      $("#main-content").css({
+        position: 'relative'
+      });
+      $("#home,#about,#portfolio,#services,#contact,#hihi").css({
+        backgroundAttachment: 'scroll'
+      });
+    }
+    if ($x <= 480) {
+      $("#nav a").on("click", function() {
+        $("#box-nav").slideToggle();
+      });
+    }
+    if ($x > 1024) {
+      $("#main-content").css({
+        position: 'fixed'
+      });
+      $('#home').parallax("50%", 0, 0.1, true);
+      $('#about').parallax("50%", 2500, 0.1, true);
+      $('#portfolio').parallax("50%", 3800, 0.1, true);
+      $('#services').parallax("50%", 5200, 0.1, true);
+      $('#contact').parallax("50%", 6400, 0.1, true);
+      $('#hihi').parallax("50%", 7600, 0.1, true);
+    }
+  })
+  </script>
+</head>
+  <body>
+<div id="wrapper">
+    <div id="main-content"> 
+    <!--==============================header================================-->
+    <header>
+        <div id="home_btn"><a  href="#home" title="Lets begin" class="logo"></a></div>
+        <nav>
+        <ul id="nav">
+          <li> <a class="home nav-button" href="#home" title="Next Section"></a> </li>
+          <li> <a class="about nav-button" href="#about" title="Next Section">不斷提昇的城市<span>who we are</span></a> </li>
+          <li> <a class="portfolio nav-button" href="#portfolio" title="Next Section">走過的路<span>a selection of work</span></a> </li>
+          <li> <a class="services nav-button" href="#services" title="Next Section">社群動起來<span>what we offer</span></a> </li>
+          <li> <a class="contact nav-button" href="#contact" title="Next Section">熱血正燃燒<span>where to find us</span></a> </li>
+          <li> <a class="hihi nav-button" href="#hihi" title="Next Section">被世界看見<span>where to find us</span></a> </li>
+        </ul>
+      </nav>
+        <!-- <a href="http://themeforest.net/user/mad_velikorodnov" target="_blank" class="btn-blog">Blog<span>what’s new</span></a> -->
+        <!--<ul class="soc">
+        <li><a href="#"> <img src="images/icon-1.png" alt="" /> <img class="active" src="images/icon-1-1.png" alt="" /> </a></li>
+        <li><a href="#"> <img src="images/icon-2.png" alt="" /> <img class="active" src="images/icon-2-1.png" alt="" /> </a></li>
+        <li><a href="#"> <img src="images/icon-3.png" alt="" /> <img class="active" src="images/icon-3-1.png" alt="" /> </a></li>
+        </ul> -->
+    </header>
+    <!--==============================home================================-->
+    <section id="home" class="slide">
+        <article class="home box-content">
+          <div id="next_btn"><a  href="#about" title="Lets begin" class="portfolio_btn z3"></a></div>
+          <div id="home_img">
+            <figure class="home-img1 z1"></figure>
+            <figure class="home-img2 z1"></figure>
+            <figure class="home-img3 z1"></figure>
+            <figure class="home-img4 z1"></figure>
+            <figure class="home-img5 z1"></figure>
+            <figure class="home-img6 z1"></figure>
+            <figure class="home-img7 z1"></figure>
+            <figure class="home-img8 z1"></figure>
+          </div>
+        </article>
+      </section>
+    <!--#home end--> 
+    <!--==============================about================================-->
+    <section id="about" class="slide">
+        <article class="about box-content">
+        <div class="box-about1">
+            <!-- <h2 id="about-h2">About</h2> -->
+            <img src="/images/title1.png" />
+            <blockquote   class="quote-1 "> “ Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna, endrerit sit amet, tincidunt, viverra sed, nulla donec porta diam. ” </blockquote>
+            <p>Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at.</p>
+            <p class="clear">Quisque diam lorem, interdum vitae,dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipisMauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. </p>
+          </div>
+        <div class="box-about2">
+            <h3  id="about2-h3">Our Philosophy</h3>
+            <p class="txt-1"> Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet. </p>
+            <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia </p>
+          </div>
+        <div class="box-about3">
+            <h3 id="about3-h3">Meet Our Team</h3>
+            <div class="wrapper">
+            <div class="box-1">
+                <figure><img src="images/img-photo-default.png" alt="" /></figure>
+                <div class="name1"><a href="#">John Barton</a><span>Creative Director</span></div>
+                <blockquote class="quote-2"> “Mauris fermentum dictum magna. Sed laoreet aliquam leo ut tellus.” </blockquote>
+              </div>
+            <div class="box-1">
+                <figure><img src="images/img-photo-default.png" alt="" /></figure>
+                <div class="name1"><a href="#">Camala Haddon</a><span>Project Manager</span></div>
+                <blockquote class="quote-2"> “Dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna aliquam erat volutpat.“ </blockquote>
+              </div>
+            <div class="box-1">
+                <figure><img src="images/img-photo-default.png" alt="" /></figure>
+                <div class="name1"><a href="#">Patrick Pool</a><span>Designer</span></div>
+                <blockquote class="quote-2"> “Duis ac turpis. Integer rutrum ante eu lacus.Vestibulum libero.” </blockquote>
+              </div>
+            <div class="box-1">
+                <figure><img src="images/img-photo-default.png" alt="" /></figure>
+                <div class="name1"><a href="#">Alan Smith</a><span>Developer</span></div>
+                <blockquote class="quote-2"> “Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante.” </blockquote>
+              </div>
+            <div class="box-1 last">
+                <figure><img src="images/img-photo-default.png" alt="" /></figure>
+                <div class="name1"><a href="#">Mark Johnson</a><span>Leading Programmer</span></div>
+                <blockquote class="quote-2"> “Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit.” </blockquote>
+              </div>
+          </div>
+          </div>
+      </article>
+      </section>
+    <!--#about end--> 
+    <!--==============================portfolio================================-->
+    
+    <section id="portfolio" class="slide">
+        <article class="box-content">
+        <div class="box-portfolio">
+            <!--  <h2 id="portfolio-h2" class="z3">Portfolio</h2> -->
+            <img src="/images/title2.png" />
+            <div class="block-img z2">
+            <div class="carousel">
+                <ul>
+                <li>
+                    <div class="box-img">
+                    <figure><a href="images/image-1-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Nemo enim ipsam."><img src="images/image-1.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Nemo enim ipsam</strong> <span>Illustrations</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat volutpat. </p>
+                        <a href="images/image-1-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Nemo enim ipsam."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-4-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Donec eget tellus."><img src="images/image-4.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Donec eget tellus</strong> <span>Web</span>
+                        <p>Consectetuer adipisMauris accumsan nulla vel diam. </p>
+                        <a href="images/image-4-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Donec eget tellus."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-7-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Lorem ipsum dolor sit."><img src="images/image-7.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Illustrations</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="images/image-7-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Lorem ipsum dolor sit."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  </li>
+                <li>
+                    <div class="box-img">
+                    <figure><a href="images/image-2-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Lorem ipsum dolor sit."><img src="images/image-2.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Illustrations</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="images/image-2-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Lorem ipsum dolor sit."></a> <a href="#" class="img-link"></a> </div>
+                  </div>  
+                  
+                
+                  <div class="box-img">                                  
+                    <figure><a class="lightbox-video" href="http://vimeo.com/36597329?byline=0&amp;portrait=0&amp;color=ffffff" data-gal="prettyPhoto[1]" title="Nemo enim ipsam."><img src="images/image-5.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Motion</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="http://vimeo.com/36597329?byline=0&amp;portrait=0&amp;color=ffffff" data-gal="prettyPhoto[]"  class="lenz-cont lightbox-video" title="Nemo enim ipsam."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  
+                  
+                  
+                    <div class="box-img">
+                    <figure><a href="images/image-8-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Donec in velit vel ipsum."><img src="images/image-8.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Donec in velit vel ipsum</strong> <span>Photography</span>
+                        <p>Vestibulum libero nisl, porta velt. </p>
+                        <a href="images/image-8-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Donec in velit vel ipsum."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  </li>
+                <li>
+                    <div class="box-img">
+                    <figure><a href="images/image-3-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Quisque diam lorem."><img src="images/image-3.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Quisque diam lorem</strong> <span>Photography</span>
+                        <p>Donec eget tellus non erat lacinia fermentum. </p>
+                        <a href="images/image-3-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Quisque diam lorem."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-6-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Donec in velit vel ipsum."><img src="images/image-6.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Donec in velit vel ipsum</strong> <span>Illustrations</span>
+                        <p>Vestibulum libero nisl, porta velt. </p>
+                        <a href="images/image-6-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Donec in velit vel ipsum."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-9-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Lorem ipsum dolor sit."><img src="images/image-9.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Photography</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="images/image-9-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Lorem ipsum dolor sit."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  </li>
+                <li>
+                    <div class="box-img">
+                    <figure><a href="images/image-10-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Nemo enim ipsam."><img src="images/image-10.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Nemo enim ipsam</strong> <span>Web</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat volutpat. </p>
+                        <a href="images/image-10-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Nemo enim ipsam."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-11-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Donec eget tellus."><img src="images/image-11.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Donec eget tellus</strong> <span>Illustrations</span>
+                        <p>Consectetuer adipisMauris accumsan nulla vel diam. </p>
+                        <a href="images/image-11-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Donec eget tellus."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-12-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Lorem ipsum dolor sit."><img src="images/image-12.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Web</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="images/image-12-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Lorem ipsum dolor sit."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  </li>
+                <li>
+                    <div class="box-img">
+                    <figure><a href="images/image-13-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Lorem ipsum dolor sit."><img src="images/image-13.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Illustrations</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="images/image-13-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Lorem ipsum dolor sit."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-14-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Lorem ipsum dolor sit."><img src="images/image-14.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Illustrations</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="images/image-14-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Lorem ipsum dolor sit."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-15-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Donec in velit vel ipsum."><img src="images/image-15.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Donec in velit vel ipsum</strong> <span>Illustrations</span>
+                        <p>Vestibulum libero nisl, porta velt. </p>
+                        <a href="images/image-15-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Donec in velit vel ipsum."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  </li>
+                <li>
+                    <div class="box-img">
+                    <figure><a href="images/image-16-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Quisque diam lorem."><img src="images/image-16.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Quisque diam lorem</strong> <span>Illustrations</span>
+                        <p>Donec eget tellus non erat lacinia fermentum. </p>
+                        <a href="images/image-16-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Quisque diam lorem."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-17-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Donec in velit vel ipsum."><img src="images/image-17.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Donec in velit vel ipsum</strong> <span>Illustrations</span>
+                        <p>Vestibulum libero nisl, porta velt. </p>
+                        <a href="images/image-17-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Donec in velit vel ipsum."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-18-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Lorem ipsum dolor sit."><img src="images/image-18.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Illustrations</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="images/image-18-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Lorem ipsum dolor sit."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  </li>
+                <li>
+                    <div class="box-img">
+                    <figure><a href="images/image-19-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Quisque diam lorem."><img src="images/image-19.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Quisque diam lorem</strong> <span>Photography</span>
+                        <p>Donec eget tellus non erat lacinia fermentum. </p>
+                        <a href="images/image-19-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Quisque diam lorem."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-20-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Donec in velit vel ipsum."><img src="images/image-20.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Donec in velit vel ipsum</strong> <span>Photography</span>
+                        <p>Vestibulum libero nisl, porta velt. </p>
+                        <a href="images/image-20-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Donec in velit vel ipsum."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                    <div class="box-img">
+                    <figure><a href="images/image-21-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Lorem ipsum dolor sit."><img src="images/image-21.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong> Lorem ipsum dolor sit</strong> <span>Photography</span>
+                        <p>Aenean auctor wisi et urna. Aliquam erat. </p>
+                        <a href="images/image-21-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Lorem ipsum dolor sit."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  </li>
+                <li>
+                    <div class="box-img">
+                    <figure><a href="images/image-22-big.jpg" class="lightbox-image" data-gal="prettyPhoto[1]" title="Quisque diam lorem."><img src="images/image-22.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Quisque diam lorem</strong> <span>Photography</span>
+                        <p>Donec eget tellus non erat lacinia fermentum. </p>
+                        <a href="images/image-22-big.jpg" data-gal="prettyPhoto[]" class="lightbox-image lenz-cont" title="Quisque diam lorem."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                                    
+                    <div class="box-img">
+                    <figure><a class="lightbox-image" href="http://www.youtube.com/watch?v=o5zTX0XWXQo?rel=0" data-gal="prettyPhoto[1]" title="Quisque diam lorem."><img src="images/image-23.jpg" alt="" /></a></figure>
+                    <div class="box-cont"> <strong>Donec in velit vel ipsum</strong> <span>Motion</span>
+                        <p>Vestibulum libero nisl, porta velt. </p>
+                        <a href="http://www.youtube.com/watch?v=o5zTX0XWXQo?rel=0"  class="lenz-cont lightbox-video" data-gal="prettyPhoto[]" title="Quisque diam lorem."></a> <a href="#" class="img-link"></a> </div>
+                  </div>
+                  
+                  </li>
+              </ul>
+              </div>
+            <a href="#" class="btn prev car-button" data-type="prev"></a> <a href="#" class="btn next car-button" data-type="next"></a> </div>
+          </div>
+      </article>
+      </section>
+    <!--#portfolio end--> 
+    
+    <!--==============================services================================-->
+    
+    <section id="services" class="slide">
+        <article class="services box-content">
+        <div class="box-service1 z3">
+            <!-- <h2 id="service-h2">Services</h2> -->
+            <img src="/images/title3.png" />
+            <p>Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipisMauris accumsan nulla vel diam. Sed in </p>
+            <div class="service z3">
+            <figure><img src="images/img-service1.png" alt="" /><img class="active" src="images/img-service1_1.png" alt="" /><a href="#" class="button-1">BraNd Creating</a></figure>
+            <p>Dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.</p>
+          </div>
+            <div class="service z3">
+            <figure><img src="images/img-service2.png" alt="" /><img class="active" src="images/img-service2_1.png" alt="" /><a href="#" class="button-1">Web Development</a></figure>
+            <p>Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget.</p>
+          </div>
+            <div class="service z3">
+            <figure><img src="images/img-service3.png" alt="" /><img class="active" src="images/img-service3_1.png" alt="" /><a href="#" class="button-1">Mobile Apps</a></figure>
+            <p>Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget.</p>
+          </div>
+            <div class="service last z3">
+            <figure><img src="images/img-service4.png" alt="" /><img class="active" src="images/img-service4_1.png" alt="" /><a href="#" class="button-1">Online Marketing</a></figure>
+            <p>Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet, tincidunt ac, viverra sed. </p>
+          </div>
+            <div class="clear"></div>
+          </div>
+        <div class="box-start z3">
+            <div class="txt-2">Ready <span>to Start</span> ?</div>
+            <div id="button_2"> <a href="#contact" class="button-2" >Contact Us Now</a></div>
+            <div class="clear"></div>
+          </div>
+        <div class="box-quotes z3">
+            <h3>Happy Clients</h3>
+            <div class="cycle">
+            <div id="cycle-slider">
+                <div class="box">
+                <blockquote>“ Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipisMauris accumsan nulla vel diam. ”</blockquote>
+                <p class="txt-name">Marta Healy,<span> USA</span></p>
+              </div>
+                <div class="box">
+                <blockquote>“ Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. ”</blockquote>
+                <p class="txt-name">Camala Haddon,<span> USA</span></p>
+              </div>
+                <div class="box">
+                <blockquote>“ Interdum vitae,dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipisMauris accumsan nulla vel diam. ”</blockquote>
+                <p class="txt-name">Patrick Pool,<span> USA</span></p>
+              </div>
+              </div>
+            <a id="next_slide"></a><a id="prev_slide"></a> </div>
+          </div>
+      </article>
+      </section>
+    <!--#services end--> 
+    
+    <!--==============================contact================================-->
+    <section id="contact" class="slide">
+        <article class="box-content">
+        <div class="box-contact">
+            <!-- <h2 id="contact-h2">Contact</h2> -->
+            <img src="/images/title4.png" />
+            <figure class="map"><img src="images/map.png" alt="" /></figure>
+            <dl class="address">
+            <dt>8901 Marmora Road,<br>
+                Glasgow, D04 89GR.</dt>
+            <dd>+1 800 559 6580</dd>
+            <dd>+1 800 603 6035</dd>
+            <dd><a  href="#" class="mail-1">mail@companyname.com</a> </dd>
+            <dd><a href="http://maps.google.com/maps?hl=en&amp;tab=wl&amp;q=search%20for%20New%20York" target="_blank" class="button-3">Get map</a></dd>
+          </dl>
+            <dl class="address">
+            <dt>9863 - 9867 Mill Road,<br>
+                Cambridge, MG09 99HT </dt>
+            <dd>+1 800 559 6580</dd>
+            <dd>+1 800 603 6035</dd>
+            <dd><a class="mail-1" href="#">mail@companyname.com</a> </dd>
+            <dd><a href="http://maps.google.com/maps?hl=en&amp;tab=wl&amp;q=search%20for%20New%20York" target="_blank" class="button-3">Get map</a></dd>
+          </dl>
+          </div>
+        <div class="box-tweeter">
+            <figure><img src="images/tweet.png" alt="" /></figure>
+            <div class="tweet"> </div>
+            <a href="http://twitter.com/#!/fanfbmltemplate" target="_blank" class="button-4">Follow Us</a> </div>
+        <div class="box-form">
+            <h3 id="form-h3">Drop Us a Line</h3>
+            <p>All fields are required.</p>
+            <form id="contact-form" action="#" method="post" enctype="multipart/form-data">
+              <div class="success">Contact form submitted! <strong>We will be in touch soon.</strong></div>
+              <fieldset>
+                  <label class="name"><span class="label"><em class="img-1"></em>
+                    <input type="text" value="Your Name">
+                    <span class="error">*This is not a valid name.</span><span class="empty">*This field is required.</span></span> </label>
+                  <label class="email"><span class="label"><em class="img-2"></em>
+                    <input type="email" value="Email">
+                    <span class="error">*This is not a valid email address.</span><span class="empty">*This field is required.</span></span></label>
+                  <label class="text"><span class="label"><em class="img-3"></em>
+                    <input type="text" value="Subject">
+                    <span class="error">*This is not a valid subject.</span><span class="empty">*This field is required.</span></span></label>
+                  <label class="message"><span class="label"><em class="img-4"></em>
+                    <textarea>Message</textarea>
+                    <span class="error">*The message is too short.</span><span class="empty">*This field is required.</span></span></label>
+                  <div class="buttons"><a href="#" class="button-3" data-type="submit">send Message</a><a href="#" class="button-3" data-type="reset">reset Form</a></div>
+                </fieldset>
+            </form>
+          </div>
+      </article>
+      </section>
+    <!--#contact end--> 
+      <section id="hihi" class="slide">
+        <article class="box-content">
+        <div class="box-contact">
+            <!-- <h2 id="contact-h2">Contact</h2> -->
+            <img src="/images/title5.png" />
+            <figure class="map"><img src="images/map.png" alt="" /></figure>
+            <dl class="address">
+            <dt>8901 Marmora Road,<br>
+                Glasgow, D04 89GR.</dt>
+            <dd>+1 800 559 6580</dd>
+            <dd>+1 800 603 6035</dd>
+            <dd><a  href="#" class="mail-1">mail@companyname.com</a> </dd>
+            <dd><a href="http://maps.google.com/maps?hl=en&amp;tab=wl&amp;q=search%20for%20New%20York" target="_blank" class="button-3">Get map</a></dd>
+          </dl>
+            <dl class="address">
+            <dt>9863 - 9867 Mill Road,<br>
+                Cambridge, MG09 99HT </dt>
+            <dd>+1 800 559 6580</dd>
+            <dd>+1 800 603 6035</dd>
+            <dd><a class="mail-1" href="#">mail@companyname.com</a> </dd>
+            <dd><a href="http://maps.google.com/maps?hl=en&amp;tab=wl&amp;q=search%20for%20New%20York" target="_blank" class="button-3">Get map</a></dd>
+          </dl>
+          </div>
+        <div class="box-tweeter">
+            <figure><img src="images/tweet.png" alt="" /></figure>
+            <div class="tweet"> </div>
+            <a href="http://twitter.com/#!/fanfbmltemplate" target="_blank" class="button-4">Follow Us</a> </div>
+        <div class="box-form">
+            <h3 id="form-h3">Drop Us a Line</h3>
+            <p>All fields are required.</p>
+            <form id="contact-form" action="#" method="post" enctype="multipart/form-data">
+            <div class="success">Contact form submitted! <strong>We will be in touch soon.</strong></div>
+            <fieldset>
+                <label class="name"><span class="label"><em class="img-1"></em>
+                  <input type="text" value="Your Name">
+                  <span class="error">*This is not a valid name.</span><span class="empty">*This field is required.</span></span> </label>
+                <label class="email"><span class="label"><em class="img-2"></em>
+                  <input type="email" value="Email">
+                  <span class="error">*This is not a valid email address.</span><span class="empty">*This field is required.</span></span></label>
+                <label class="text"><span class="label"><em class="img-3"></em>
+                  <input type="text" value="Subject">
+                  <span class="error">*This is not a valid subject.</span><span class="empty">*This field is required.</span></span></label>
+                <label class="message"><span class="label"><em class="img-4"></em>
+                  <textarea>Message</textarea>
+                  <span class="error">*The message is too short.</span><span class="empty">*This field is required.</span></span></label>
+                <div class="buttons"><a href="#" class="button-3" data-type="submit">send Message</a><a href="#" class="button-3" data-type="reset">reset Form</a></div>
+              </fieldset>
+          </form>
+          </div>
+      </article>
+      </section>
+  </div>
+  </div>
+<script>
+$(document).ready(function () {
+    $("body").queryLoader2({
+        barColor: "#e7ca01",
+        backgroundColor: "#000",
+        percentage: true,
+        barHeight: 1,
+        completeAnimation: "fade",
+        minimumTime: 100
+    });
+});
+</script>
+</body>
+</html>
